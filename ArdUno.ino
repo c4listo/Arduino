@@ -72,9 +72,11 @@ void loop()
    //Sensor1 = Sensor1 / anzMessungen;
    Sensor2 = Sensor2 / anzMessungen;
    helper = 0;
+   
    if (Sensor2 < 0 )
    {
      Sensor2 = (-1) * Sensor2;
+     helper = helper + 200;
    }
    
    //check ob wir gerade im Gieß-Zeitfenster sind
@@ -85,20 +87,20 @@ void loop()
      if (Sensor2 < Grenzwert)
      {
        //gießen; Zeitfenster + trocken
-       helper = 1;
+       helper += 1;
        RelayVariable = 1;
      }
      else
      {
        //nicht gießen; Zeitfenster + nicht trocken
-       helper = 2;
+       helper += 2;
        RelayVariable = 0;
      }
    }
    else
    {
      //nicht gießen; kein Zeitfenster
-     helper = 3;
+     helper += 3;
      RelayVariable = 0;
    }
    
