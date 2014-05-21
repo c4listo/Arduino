@@ -162,6 +162,7 @@ void loop()
   //            2 Zeitfenster + nicht trocken
   //            3 kein Zeitfenster
   //            +100 manuell gießen
+  //            +200 Messwert war negativ
   Serial.println(dataString1);
   
   File dataFile = SD.open("datalog.txt", FILE_WRITE);
