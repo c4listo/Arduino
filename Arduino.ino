@@ -14,7 +14,7 @@ const int rpiIN = 4;
 const int Relay = 3;
 
 // Konstanten
-const int Grenzwert = 100;
+const int Grenzwert = 200;
 const int anzMessungen = 50;
 const unsigned long pause = 300000;
 
@@ -60,17 +60,17 @@ void loop()
    delay(100);
    for (int i = 0; i < anzMessungen; i++)
    {
-     //helper = analogRead(analogPin1);
-     //Sensor1 = Sensor1 + helper;
-     //delay(100);
-     helper = analogRead(analogPin2);
-     Sensor2 = Sensor2 + helper;
+     helper = analogRead(analogPin1);
+     Sensor1 = Sensor1 + helper;
      delay(50);
+     //helper = analogRead(analogPin2);
+     //Sensor2 = Sensor2 + helper;
+     //delay(50);
    }
    digitalWrite(SensorPowerPin, LOW);
    
-   //Sensor1 = Sensor1 / anzMessungen;
-   Sensor2 = Sensor2 / anzMessungen;
+   Sensor1 = Sensor1 / anzMessungen;
+   //Sensor2 = Sensor2 / anzMessungen;
    helper = 0;
    
    if (Sensor2 < 0 )
