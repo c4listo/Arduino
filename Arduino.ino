@@ -29,8 +29,8 @@ void setup()
   pinMode(rpiIN, INPUT);
   pinMode(Relay, OUTPUT);
   pinMode(SensorPowerPin, OUTPUT);
-  digitalWrite(SensorPowerPin, LOW);
   digitalWrite(Relay, LOW);
+  digitalWrite(SensorPowerPin, LOW);
   Serial.begin(9600);
   Wire.begin();
   RTC.begin();
