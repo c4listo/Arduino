@@ -79,12 +79,18 @@ void loop()
      helper = helper + 200;
    }
    
+   if (Sensor1 < 0 )
+   {
+     Sensor1 = (-1) * Sensor1;
+     helper = helper + 200;
+   }
+   
    //check ob wir gerade im Gieß-Zeitfenster sind
    if(Stunde > 6 && Stunde < 8 || Stunde > 18 && Stunde < 20)
    {
      //check obs trocken ist
      //if (Sensor1 < Grenzwert && Sensor2 < Grenzwert)
-     if (Sensor2 < Grenzwert)
+     if (Sensor1 < Grenzwert)
      {
        //gießen; Zeitfenster + trocken
        helper += 1;
