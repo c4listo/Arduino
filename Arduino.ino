@@ -14,7 +14,7 @@ const int rpiIN = 4;
 const int Relay = 3;
 
 // Konstanten
-const int Grenzwert = 200;
+const int Grenzwert = 500;
 const int anzMessungen = 50;
 const unsigned long pause = 300000;
 
